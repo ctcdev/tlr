@@ -15,7 +15,7 @@ The changes in this version center around providing functionality for hourly emp
 - Supervisors will now see eligible hourly employee balances listed on their Employees' Balances page.
 - The TIME file export has been updated to generate both a time file _and_ a leave file and to show both in the files list.
 
-Because we started this work when we had no specific direction from the state board, we had to make a number of assumptions about how hourly leave would operate and be accounted for in the HP. We still have little specific direction from the state board, but a couple assumptions have proven false.  Noted below are some assumption and whether this distribution accounts for said proven-false assumptions - in some cases, due to time constraints in distributing this, fixes for false assumption ARE NOT included, and you will be responsible for these.
+Because we started this work when we had no specific direction from the state board, we had to make a number of assumptions about how hourly leave would operate and be accounted for in the HP. Noted below are some assumptions and whether this distribution accounts for said proven-false assumptions - in some cases, due to time constraints in distributing this, fixes for false assumptions ARE NOT included, and you will be responsible for these.
  
 #### Assumptions
 
@@ -24,9 +24,9 @@ Please check back here, as assumptions will be added/updated here as more inform
 - Eligible hourly students will be updated to have an HP LeaveAccrualCode of 'Y' similar to exempt and classified employees.
 	- Proven? FALSE. However, you should not need to make any changes to account for this as this means there is no change how the type of timesheet is chosen for an employees. 
 - Hourly leave will be included as time in calculating overtime. 
-	- Proven? FALSE-ISH. Indication is that it will NOT be included in calculating overtime. However, we do not yet have confirmation from the state board as to how we should do overtime calculations.
+	- Proven? FALSE. Per the state board, hourly leave is not to be included in calculating overtime. The v1.4.2 release includes updates related to hourly overtime calculation.
 - Hourly leave time will be counted as both time AND leave.
-	- Proven? ISH. The TIME file export job will create both time and leave entries in the respective generated files during export (and this is correct). However, there is ongoing discussion as to how best to mark time hours for leave for tax accounting purposes. The best solution here is still to be determined.
+	- Proven? ISH. The HOURLY file export job will create both time and leave entries in the respective generated files during export (and this is correct). However, there is ongoing discussion as to how best to mark time hours for leave for tax accounting purposes. The best solution here is still to be determined.
 - Hourly employee leave balances will flow similar to how an exempt or classified employees currently does, i.e. eligible hourly employees will have entries in ODS EmployeeLeave and EmployeeLeaveHistory tables.
 	- Proven? TRUE. As of February 8, we're seeing the leave data from the HP flowing into the ODS EmployeeLeave and EmployeeLeaveHistory tables under the HSL leave type.
 
