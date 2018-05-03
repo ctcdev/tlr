@@ -347,8 +347,8 @@
             <td class="total_hours"></td>
             <td class="total_hours"></td>
             <td class="total_hours value" headers="overtime">
-                <%#IIf(Container.DataItem("TotalWeekMinutes") > 2400, Math.Floor((Container.DataItem("TotalWeekMinutes") - 2400) / 60), "0")%> <abbr title="hours">hrs</abbr>
-                <%#IIf(Container.DataItem("TotalWeekMinutes") > 2400, Math.Floor((Container.DataItem("TotalWeekMinutes") - 2400) Mod 60), "0")%> <aabr title="minutes">mins</aabr>
+                <%#IIf((Container.DataItem("TotalWeekMinutes") - Container.DataItem("TotalLeaveMinutes")) > 2400, Math.Floor((Container.DataItem("TotalWeekMinutes") - Container.DataItem("TotalLeaveMinutes") - 2400) / 60), "0")%> <abbr title="hours">hrs</abbr>
+                <%#IIf((Container.DataItem("TotalWeekMinutes") - Container.DataItem("TotalLeaveMinutes")) > 2400, Math.Floor((Container.DataItem("TotalWeekMinutes") - Container.DataItem("TotalLeaveMinutes") - 2400) Mod 60), "0")%> <aabr title="minutes">mins</aabr>
             </td>
             <td class="total_hours"></td>
         </tr>        
